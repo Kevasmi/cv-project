@@ -4,6 +4,52 @@ import './App.css';
 import Form from './components/Form';
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      formData: {
+        personalInfo: {
+          name: '',
+          phone: '',
+          email: '',
+          address: '',
+        },
+        professionalInfo: {
+          one: {
+            role: '',
+            startDate: '',
+            endDate: '',
+            name: '',
+            description: '',
+          },
+          two: {
+            role: '',
+            startDate: '',
+            endDate: '',
+            name: '',
+            description: '',
+          },
+        },
+        educationInfo: {
+          one: {
+            name: '',
+            city: '',
+            degree: '',
+            startDate: '',
+            endDate: '',
+          },
+          two: {
+            name: '',
+            city: '',
+            degree: '',
+            startDate: '',
+            endDate: '',
+          },
+        },
+      },
+    };
+  }
+
   render() {
     return (
       <div className='App'>
