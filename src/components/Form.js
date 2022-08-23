@@ -14,8 +14,11 @@ class Form extends React.Component {
       <div>
         <form>
           <PersonalInformation
-            personalData={this.props.formData}
+            personalInfo={this.props.formData.personalInfo}
             onPersonalNameChange={this.props.onPersonalNameChange}
+            onPhoneChange={this.props.onPhoneChange}
+            onEmailChange={this.props.onEmailChange}
+            onAddressChange={this.props.onAddressChange}
           />
           <CompanyInformation />
           <EducationInformation />
