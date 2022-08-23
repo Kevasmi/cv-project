@@ -6,6 +6,7 @@ import Form from './components/Form';
 class App extends React.Component {
   constructor() {
     super();
+    this.handlePersonalNameChange = this.handlePersonalNameChange.bind(this);
     this.state = {
       formData: {
         personalInfo: {
@@ -50,11 +51,25 @@ class App extends React.Component {
     };
   }
 
+  handlePersonalNameChange(e) {
+    this.setState({
+      formData: {
+        personalInfo: {
+          name: e.target.value,
+        },
+      },
+    });
+    console.log(this.state.formData.personalInfo.name);
+  }
+
   render() {
     return (
       <div className='App'>
         <section className='form-side'>
-          <Form />
+          <Form
+            formData={this.state.formData}
+            onPersonalNameChange={this.handlePersonalNameChange}
+          />
         </section>
         {/* <section className='cv-side'>
         <CurriculumVitae />

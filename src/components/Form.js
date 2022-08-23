@@ -13,7 +13,10 @@ class Form extends React.Component {
     return (
       <div>
         <form>
-          <PersonalInformation />
+          <PersonalInformation
+            personalData={this.props.formData}
+            onPersonalNameChange={this.props.onPersonalNameChange}
+          />
           <CompanyInformation />
           <EducationInformation />
         </form>
