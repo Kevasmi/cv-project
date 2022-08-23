@@ -19,6 +19,8 @@ class Form extends React.Component {
           />
           <CompanyInformation />
           <EducationInformation />
+          <button type='submit'>Submit</button>
+          <button>Edit</button>
         </form>
       </div>
     );

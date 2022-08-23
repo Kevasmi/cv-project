@@ -20,9 +20,18 @@ class PersonalInformation extends React.Component {
           onChange={this.handleNameChange}
         ></input>
         <label htmlFor='phone'>Phone: </label>
-        <input type='text' id='phone'></input>
+        <input
+          type='tel'
+          id='phone'
+          pattern='[0-9]{3}-[0-9]{3}-[0-9]{3}'
+          placeholder='012-345-6789'
+        ></input>
         <label htmlFor='email'>E-Mail: </label>
-        <input type='email' id='email'></input>
+        <input
+          type='email'
+          id='email'
+          placeholder='example@example.com'
+        ></input>
         <label htmlFor='home-address'>Address: </label>
         <input type='text' id='home-address'></input>
       </section>
