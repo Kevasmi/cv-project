@@ -11,7 +11,6 @@ class App extends React.Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleAddressChange = this.handleAddressChange.bind(this);
     this.state = {
-      formData: {
         personalInfo: {
           name: '',
           phone: '',
@@ -50,41 +49,37 @@ class App extends React.Component {
             endDate: '',
           },
         },
-      },
     };
   }
 
   handlePersonalNameChange(e) {
+    const { value } = e.target;
     this.setState({
-      formData: {
         personalInfo: {
-          name: e.target.value,
-        },
+        name: value,
       },
     });
-    console.log(this.state.formData.personalInfo.name);
+    console.log(this.state.personalInfo.name);
   }
 
   handlePhoneChange(e) {
+    const { value } = e.target;
     this.setState({
-      formData: {
         personalInfo: {
-          phone: e.target.value,
-        },
+        phone: value,
       },
     });
-    console.log(this.state.formData.personalInfo.phone);
+    console.log(this.state.personalInfo.phone);
   }
 
   handleEmailChange(e) {
+    const { value } = e.target;
     this.setState({
-      formData: {
         personalInfo: {
-          email: e.target.value,
-        },
+        email: value,
       },
     });
-    console.log(this.state.formData.personalInfo.email);
+    console.log(this.state.personalInfo.email);
   }
 
   handleAddressChange(e) {
@@ -103,7 +98,8 @@ class App extends React.Component {
       <div className='App'>
         <section className='form-side'>
           <Form
-            formData={this.state.formData}
+            personalInfo={this.state.personalInfo}
+            professionalInfo={this.state.professionalInfo}
             onPersonalNameChange={this.handlePersonalNameChange}
             onPhoneChange={this.handlePhoneChange}
             onEmailChange={this.handleEmailChange}
