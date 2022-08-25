@@ -32,6 +32,7 @@ class PersonalInformation extends React.Component {
         <input
           type='text'
           id='name'
+          name='name'
           value={this.props.personalInfo.name}
           onChange={this.handleNameChange}
         ></input>
@@ -41,6 +42,7 @@ class PersonalInformation extends React.Component {
           id='phone'
           pattern='[0-9]{3}-[0-9]{3}-[0-9]{3}'
           placeholder='012-345-6789'
+          name='phone'
           value={this.props.personalInfo.phone}
           onChange={this.handlePhoneChange}
         ></input>
@@ -49,6 +51,7 @@ class PersonalInformation extends React.Component {
           type='email'
           id='email'
           placeholder='example@example.com'
+          name='email'
           value={this.props.personalInfo.email}
           onChange={this.handleEmailChange}
         ></input>
@@ -56,6 +59,7 @@ class PersonalInformation extends React.Component {
         <input
           type='text'
           id='home-address'
+          name='address'
           value={this.props.personalInfo.address}
           onChange={this.handleAddressChange}
         ></input>
