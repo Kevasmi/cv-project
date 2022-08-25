@@ -3,26 +3,11 @@ import React from 'react';
 class PersonalInformation extends React.Component {
   constructor(props) {
     super(props);
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handlePhoneChange = this.handlePhoneChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleAddressChange = this.handleAddressChange.bind(this);
+    this.handlePersonalInputChange = this.handlePersonalInputChange.bind(this);
   }
 
-  handleNameChange(e) {
-    this.props.onPersonalNameChange(e);
-  }
-
-  handlePhoneChange(e) {
-    this.props.onPhoneChange(e);
-  }
-
-  handleEmailChange(e) {
-    this.props.onEmailChange(e);
-  }
-
-  handleAddressChange(e) {
-    this.props.onAddressChange(e);
+  handlePersonalInputChange(e) {
+    this.props.onPersonalInputChange(e);
   }
 
   render() {
@@ -34,7 +19,7 @@ class PersonalInformation extends React.Component {
           id='name'
           name='name'
           value={this.props.personalInfo.name}
-          onChange={this.handleNameChange}
+          onChange={this.handlePersonalInputChange}
         ></input>
         <label htmlFor='phone'>Phone: </label>
         <input
@@ -44,7 +29,7 @@ class PersonalInformation extends React.Component {
           placeholder='012-345-6789'
           name='phone'
           value={this.props.personalInfo.phone}
-          onChange={this.handlePhoneChange}
+          onChange={this.handlePersonalInputChange}
         ></input>
         <label htmlFor='email'>E-Mail: </label>
         <input
@@ -53,7 +38,7 @@ class PersonalInformation extends React.Component {
           placeholder='example@example.com'
           name='email'
           value={this.props.personalInfo.email}
-          onChange={this.handleEmailChange}
+          onChange={this.handlePersonalInputChange}
         ></input>
         <label htmlFor='home-address'>Address: </label>
         <input
@@ -61,7 +46,7 @@ class PersonalInformation extends React.Component {
           id='home-address'
           name='address'
           value={this.props.personalInfo.address}
-          onChange={this.handleAddressChange}
+          onChange={this.handlePersonalInputChange}
         ></input>
       </section>
     );

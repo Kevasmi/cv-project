@@ -6,10 +6,9 @@ import Form from './components/Form';
 class App extends React.Component {
   constructor() {
     super();
-    this.handlePersonalNameChange = this.handlePersonalNameChange.bind(this);
-    this.handlePhoneChange = this.handlePhoneChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleAddressChange = this.handleAddressChange.bind(this);
+    this.handlePersonalInputChange = this.handlePersonalInputChange.bind(this);
+    this.handleProfessionalRoleChangeOne =
+      this.handleProfessionalRoleChangeOne.bind(this);
     this.state = {
         personalInfo: {
           name: '',
@@ -52,41 +51,22 @@ class App extends React.Component {
     };
   }
 
-  handlePersonalNameChange(e) {
+  handlePersonalInputChange(e) {
+    const name = e.target.name;
     const { value } = e.target;
-    this.setState({
+    this.setState((prevState) => ({
+      ...prevState,
         personalInfo: {
-        name: value,
+        ...prevState.personalInfo,
+        [name]: value,
       },
-    });
-    console.log(this.state.personalInfo.name);
+    }));
   }
 
   handlePhoneChange(e) {
     const { value } = e.target;
     this.setState({
-        personalInfo: {
-        phone: value,
-      },
-    });
-    console.log(this.state.personalInfo.phone);
-  }
-
-  handleEmailChange(e) {
-    const { value } = e.target;
-    this.setState({
-        personalInfo: {
-        email: value,
-      },
-    });
-    console.log(this.state.personalInfo.email);
-  }
-
-  handleAddressChange(e) {
-    this.setState({
-      formData: {
-        personalInfo: {
-          address: e.target.value,
+          role: value,
         },
       },
     });
@@ -100,7 +80,7 @@ class App extends React.Component {
           <Form
             personalInfo={this.state.personalInfo}
             professionalInfo={this.state.professionalInfo}
-            onPersonalNameChange={this.handlePersonalNameChange}
+            onPersonalInputChange={this.handlePersonalInputChange}
             onPhoneChange={this.handlePhoneChange}
             onEmailChange={this.handleEmailChange}
             onAddressChange={this.handleAddressChange}
