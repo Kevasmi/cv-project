@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-// import CurriculumVitae from './components/CurriculumVitae';
+import './styles/App.css';
+import CurriculumVitae from './components/CurriculumVitae';
 import Form from './components/Form';
 
 class App extends React.Component {
@@ -85,9 +85,9 @@ class App extends React.Component {
             onEducationChange={this.handleEducationChange}
           />
         </section>
-        {/* <section className='cv-side'>
-        <CurriculumVitae />
-      </section> */}
+        <section className='cv-side'>
+          <CurriculumVitae />
+        </section>
       </div>
     );
   }
