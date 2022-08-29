@@ -13,7 +13,7 @@ class PersonalInformation extends React.Component {
   render() {
     return (
       <section className='personal-section'>
-        <label htmlFor='name'>Name: </label>
+        <label htmlFor='name'>Name </label>
         <input
           type='text'
           id='name'
@@ -21,7 +21,7 @@ class PersonalInformation extends React.Component {
           value={this.props.personalInfo.name}
           onChange={this.handlePersonalInputChange}
         ></input>
-        <label htmlFor='phone'>Phone: </label>
+        <label htmlFor='phone'>Phone </label>
         <input
           type='tel'
           id='phone'
@@ -31,7 +31,7 @@ class PersonalInformation extends React.Component {
           value={this.props.personalInfo.phone}
           onChange={this.handlePersonalInputChange}
         ></input>
-        <label htmlFor='email'>E-Mail: </label>
+        <label htmlFor='email'>E-Mail </label>
         <input
           type='email'
           id='email'
@@ -40,7 +40,7 @@ class PersonalInformation extends React.Component {
           value={this.props.personalInfo.email}
           onChange={this.handlePersonalInputChange}
         ></input>
-        <label htmlFor='home-address'>Address: </label>
+        <label htmlFor='home-address'>Address </label>
         <input
           type='text'
           id='home-address'
