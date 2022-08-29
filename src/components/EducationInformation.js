@@ -1,32 +1,61 @@
 import React from 'react';
 
 class EducationInformation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleEducationChange = this.handleEducationChange.bind(this);
+  }
+
+  handleEducationChange(e) {
+    this.props.onEducationChange(e);
+  }
+
   render() {
     return (
-      <section className='education-section-one'>
-        <label htmlFor='education-name-one'>Name: </label>
-        <input type='text' id='education-name-one'></input>
-        <label htmlFor='education-city-one'>City: </label>
-        <input type='text' id='education-city-one'></input>
-        <label htmlFor='education-degree-one'>Degree: </label>
-        <input type='text' id='education-degree-one'></input>
-        <label htmlFor='start-date-one'>Start date: </label>
-        <input type='date' id='start-date-one'></input>
-        <label htmlFor='end-date-one'>End date: </label>
-        <input type='date' id='end-date-one'></input>
+      <section className='education-info'>
+        <section className='education-section'>
+          <label htmlFor='name'>Name: </label>
+          <input
+            type='text'
+            id='name'
+            name='name'
+            value={this.props.educationInfo.name}
+            onChange={this.handleEducationChange}
+          ></input>
+          <label htmlFor='city'>City: </label>
+          <input
+            type='text'
+            id='city'
+            name='city'
+            value={this.props.educationInfo.city}
+            onChange={this.handleEducationChange}
+          ></input>
+          <label htmlFor='degree'>Degree: </label>
+          <input
+            type='text'
+            id='degree'
+            name='degree'
+            value={this.props.educationInfo.degree}
+            onChange={this.handleEducationChange}
+          ></input>
+          <label htmlFor='start-date'>Start date: </label>
+          <input
+            type='date'
+            id='start-date'
+            name='startDate'
+            value={this.props.educationInfo.startDate}
+            onChange={this.handleEducationChange}
+          ></input>
+          <label htmlFor='end-date'>End date: </label>
+          <input
+            type='date'
+            id='end-date'
+            name='endDate'
+            value={this.props.educationInfo.endDate}
+            onChange={this.handleEducationChange}
+          ></input>
+        </section>
       </section>
-      // <section className='education-section-two'>
-      // <label htmlFor='education-name-one'>Name: </label>
-      // <input type='text' id='education-name-one'></input>
-      // <label htmlFor='education-city-one'>City: </label>
-      // <input type='text' id='education-city-one'></input>
-      // <label htmlFor='education-degree-one'>Degree: </label>
-      // <input type='text' id='education-degree-one'></input>
-      // <label htmlFor='start-date-one'>Start date: </label>
-      // <input type='date' id='start-date-one'></input>
-      // <label htmlFor='end-date-one'>End date: </label>
-      // <input type='date' id='end-date-one'></input>
-      // </section>
     );
   }
 }

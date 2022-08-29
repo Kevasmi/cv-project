@@ -1,40 +1,65 @@
 import React from 'react';
 
 class CompanyInformation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
+  }
+
+  handleProfessionalChange(e) {
+    this.props.onProfessionalChange(e);
+  }
+
   render() {
     return (
-      <section className='company-section-one'>
-        <label htmlFor='role-one'>Role: </label>
-        <input type='text' id='role-one'></input>
-        <label htmlFor='start-date-one'>Start date: </label>
-        <input type='date' id='start-date-one'></input>
-        <label htmlFor='end-date-one'>End date: </label>
-        <input type='date' id='end-date-one'></input>
-        <label htmlFor='company-name-one'>Company Name: </label>
-        <input type='text' id='company-name-one'></input>
-        {/* <label htmlFor='city-one'>Company city: </label>
-        <input type='text' id='city-one'></input>
-        <label htmlFor='state-one'>Company state: </label>
-        <input type='text' id='state-one'></input> */}
-        <label htmlFor='description-one'>Description of duties: </label>
-        <input type='textarea' id='description-one'></input>
+      <section className='company-info'>
+        <section className='company-section-one'>
+          <label htmlFor='role-one'>Role: </label>
+          <input
+            type='text'
+            id='role-one'
+            name='role'
+            value={this.props.professionalInfo.role}
+            onChange={this.handleProfessionalChange}
+          ></input>
+          <label htmlFor='start-date'>Start date: </label>
+          <input
+            type='date'
+            id='start-date'
+            name='startDate'
+            value={this.props.professionalInfo.startDate}
+            onChange={this.handleProfessionalChange}
+          ></input>
+          <label htmlFor='end-date'>End date: </label>
+          <input
+            type='date'
+            id='end-date'
+            name='endDate'
+            value={this.props.professionalInfo.endDate}
+            onChange={this.handleProfessionalChange}
+          ></input>
+          <label htmlFor='company-name'>Company Name: </label>
+          <input
+            type='text'
+            id='company-name'
+            name='name'
+            value={this.props.professionalInfo.name}
+            onChange={this.handleProfessionalChange}
+          ></input>
+          {/* <label htmlFor='city-one'>Company city: </label>
+          <input type='text' id='city-one'></input>
+          <label htmlFor='state-one'>Company state: </label>
+          <input type='text' id='state-one'></input> */}
+          <label htmlFor='description-one'>Description of duties: </label>
+          <input
+            type='textarea'
+            id='description-one'
+            name='description'
+            value={this.props.professionalInfo.description}
+            onChange={this.handleProfessionalChange}
+          ></input>
+        </section>
       </section>
-      // <section className='company-section-two'>
-      //   <label htmlFor='role-two'>Role: </label>
-      //   <input type='text' id='role-two'></input>
-      //   <label htmlFor='start-date-two'>Start date: </label>
-      //   <input type='date' id='start-date-two'></input>
-      //   <label htmlFor='end-date-two'>End date: </label>
-      //   <input type='date' id='end-date-two'></input>
-      //   <label htmlFor='company-name-two'>Company Name: </label>
-      //   <input type='text' id='company-name-two'></input>
-      //   <label htmlFor='city-two'>Company city: </label>
-      //   <input type='text' id='city-two'></input>
-      //   {/* <label htmlFor='state-two'>Company state: </label>
-      //   <input type='text' id='state-two'></input> */}
-      //   <label htmlFor='description-two'>Description of duties: </label>
-      //   <input type='textarea' id='description-two'></input>
-      // </section>
     );
   }
 }

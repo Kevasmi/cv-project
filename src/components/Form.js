@@ -17,8 +17,14 @@ class Form extends React.Component {
             personalInfo={this.props.personalInfo}
             onPersonalInputChange={this.props.onPersonalInputChange}
           />
-          <CompanyInformation />
-          <EducationInformation />
+          <CompanyInformation
+            professionalInfo={this.props.professionalInfo}
+            onProfessionalChange={this.props.onProfessionalChange}
+          />
+          <EducationInformation
+            educationInfo={this.props.educationInfo}
+            onEducationChange={this.props.onEducationChange}
+          />
           <button type='submit'>Submit</button>
           <button>Edit</button>
         </form>

@@ -7,47 +7,29 @@ class App extends React.Component {
   constructor() {
     super();
     this.handlePersonalInputChange = this.handlePersonalInputChange.bind(this);
-    this.handleProfessionalRoleChangeOne =
-      this.handleProfessionalRoleChangeOne.bind(this);
+    this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
+    this.handleEducationChange = this.handleEducationChange.bind(this);
     this.state = {
-        personalInfo: {
-          name: '',
-          phone: '',
-          email: '',
-          address: '',
-        },
-        professionalInfo: {
-          one: {
-            role: '',
-            startDate: '',
-            endDate: '',
-            name: '',
-            description: '',
-          },
-          two: {
-            role: '',
-            startDate: '',
-            endDate: '',
-            name: '',
-            description: '',
-          },
-        },
-        educationInfo: {
-          one: {
-            name: '',
-            city: '',
-            degree: '',
-            startDate: '',
-            endDate: '',
-          },
-          two: {
-            name: '',
-            city: '',
-            degree: '',
-            startDate: '',
-            endDate: '',
-          },
-        },
+      personalInfo: {
+        name: '',
+        phone: '',
+        email: '',
+        address: '',
+      },
+      professionalInfo: {
+        role: '',
+        startDate: '',
+        endDate: '',
+        name: '',
+        description: '',
+      },
+      educationInfo: {
+        name: '',
+        city: '',
+        degree: '',
+        startDate: '',
+        endDate: '',
+      },
     };
   }
 
@@ -56,21 +38,38 @@ class App extends React.Component {
     const { value } = e.target;
     this.setState((prevState) => ({
       ...prevState,
-        personalInfo: {
+      personalInfo: {
         ...prevState.personalInfo,
         [name]: value,
       },
     }));
+    console.log(this.state.professionalInfo);
   }
 
-  handlePhoneChange(e) {
+  handleProfessionalChange(e) {
+    const name = e.target.name;
     const { value } = e.target;
-    this.setState({
-          role: value,
-        },
+    this.setState((prevState) => ({
+      ...prevState,
+      professionalInfo: {
+        ...prevState.professionalInfo,
+        [name]: value,
       },
-    });
-    console.log(this.state.formData.personalInfo.address);
+    }));
+    console.log(this.state.professionalInfo);
+  }
+
+  handleEducationChange(e) {
+    const name = e.target.name;
+    const { value } = e.target;
+    this.setState((prevState) => ({
+      ...prevState,
+      educationInfo: {
+        ...prevState.educationInfo,
+        [name]: value,
+      },
+    }));
+    console.log(this.state.educationInfo);
   }
 
   render() {
@@ -80,10 +79,10 @@ class App extends React.Component {
           <Form
             personalInfo={this.state.personalInfo}
             professionalInfo={this.state.professionalInfo}
+            educationInfo={this.state.educationInfo}
             onPersonalInputChange={this.handlePersonalInputChange}
-            onPhoneChange={this.handlePhoneChange}
-            onEmailChange={this.handleEmailChange}
-            onAddressChange={this.handleAddressChange}
+            onProfessionalChange={this.handleProfessionalChange}
+            onEducationChange={this.handleEducationChange}
           />
         </section>
         {/* <section className='cv-side'>
