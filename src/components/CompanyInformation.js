@@ -13,16 +13,27 @@ class CompanyInformation extends React.Component {
   render() {
     return (
       <section className='company-info'>
-        <section className='company-section-one'>
-          <label htmlFor='role-one'>Role: </label>
-          <input
-            type='text'
-            id='role-one'
-            name='role'
-            value={this.props.professionalInfo.role}
-            onChange={this.handleProfessionalChange}
-          ></input>
-          <label htmlFor='start-date'>Start date: </label>
+        <h2>Professional Information</h2>
+        <label htmlFor='company-name'>Company Name </label>
+        <input
+          type='text'
+          id='company-name'
+          name='name'
+          value={this.props.professionalInfo.name}
+          onChange={this.handleProfessionalChange}
+        ></input>
+        <label htmlFor='role-one'>Role </label>
+        <input
+          type='text'
+          id='role-one'
+          name='role'
+          value={this.props.professionalInfo.role}
+          onChange={this.handleProfessionalChange}
+        ></input>
+        <section className='dates'>
+          <label htmlFor='start-date' className='start-label'>
+            Start date{' '}
+          </label>
           <input
             type='date'
             id='start-date'
@@ -30,7 +41,9 @@ class CompanyInformation extends React.Component {
             value={this.props.professionalInfo.startDate}
             onChange={this.handleProfessionalChange}
           ></input>
-          <label htmlFor='end-date'>End date: </label>
+          <label htmlFor='end-date' className='end-label'>
+            End date{' '}
+          </label>
           <input
             type='date'
             id='end-date'
@@ -38,27 +51,15 @@ class CompanyInformation extends React.Component {
             value={this.props.professionalInfo.endDate}
             onChange={this.handleProfessionalChange}
           ></input>
-          <label htmlFor='company-name'>Company Name: </label>
-          <input
-            type='text'
-            id='company-name'
-            name='name'
-            value={this.props.professionalInfo.name}
-            onChange={this.handleProfessionalChange}
-          ></input>
-          {/* <label htmlFor='city-one'>Company city: </label>
-          <input type='text' id='city-one'></input>
-          <label htmlFor='state-one'>Company state: </label>
-          <input type='text' id='state-one'></input> */}
-          <label htmlFor='description-one'>Description of duties: </label>
-          <input
-            type='textarea'
-            id='description-one'
-            name='description'
-            value={this.props.professionalInfo.description}
-            onChange={this.handleProfessionalChange}
-          ></input>
         </section>
+        <label htmlFor='description-one'>Description of duties </label>
+        <textarea
+          // type='textarea'
+          id='description-one'
+          name='description'
+          value={this.props.professionalInfo.description}
+          onChange={this.handleProfessionalChange}
+        ></textarea>
       </section>
     );
   }

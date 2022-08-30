@@ -13,32 +13,35 @@ class EducationInformation extends React.Component {
   render() {
     return (
       <section className='education-info'>
-        <section className='education-section'>
-          <label htmlFor='name'>Name: </label>
-          <input
-            type='text'
-            id='name'
-            name='name'
-            value={this.props.educationInfo.name}
-            onChange={this.handleEducationChange}
-          ></input>
-          <label htmlFor='city'>City: </label>
-          <input
-            type='text'
-            id='city'
-            name='city'
-            value={this.props.educationInfo.city}
-            onChange={this.handleEducationChange}
-          ></input>
-          <label htmlFor='degree'>Degree: </label>
-          <input
-            type='text'
-            id='degree'
-            name='degree'
-            value={this.props.educationInfo.degree}
-            onChange={this.handleEducationChange}
-          ></input>
-          <label htmlFor='start-date'>Start date: </label>
+        <h2>Education Information</h2>
+        <label htmlFor='name'>Name </label>
+        <input
+          type='text'
+          id='name'
+          name='name'
+          value={this.props.educationInfo.name}
+          onChange={this.handleEducationChange}
+        ></input>
+        <label htmlFor='city'>City </label>
+        <input
+          type='text'
+          id='city'
+          name='city'
+          value={this.props.educationInfo.city}
+          onChange={this.handleEducationChange}
+        ></input>
+        <label htmlFor='degree'>Degree </label>
+        <input
+          type='text'
+          id='degree'
+          name='degree'
+          value={this.props.educationInfo.degree}
+          onChange={this.handleEducationChange}
+        ></input>
+        <section className='dates'>
+          <label htmlFor='start-date' className='start-label'>
+            Start date{' '}
+          </label>
           <input
             type='date'
             id='start-date'
@@ -46,7 +49,9 @@ class EducationInformation extends React.Component {
             value={this.props.educationInfo.startDate}
             onChange={this.handleEducationChange}
           ></input>
-          <label htmlFor='end-date'>End date: </label>
+          <label htmlFor='end-date' className='end-label'>
+            End date{' '}
+          </label>
           <input
             type='date'
             id='end-date'

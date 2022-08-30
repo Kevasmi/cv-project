@@ -12,7 +12,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='form-container'>
         <form>
           <PersonalInformation
             personalInfo={this.props.personalInfo}
@@ -26,8 +26,9 @@ class Form extends React.Component {
             educationInfo={this.props.educationInfo}
             onEducationChange={this.props.onEducationChange}
           />
-          <button type='submit'>Submit</button>
-          <button>Edit</button>
+          <button type='submit' className='submitBtn'>
+            Submit
+          </button>
         </form>
       </div>
     );
