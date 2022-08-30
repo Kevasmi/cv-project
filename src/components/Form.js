@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Form.css';
 import CompanyInformation from './CompanyInformation';
 import EducationInformation from './EducationInformation';
 import PersonalInformation from './PersonalInformation';
