@@ -1,0 +1,116 @@
+form {
+  color: #fff370;
+}
+
+label {
+  display: block;
+  padding: 1rem 0 0.25rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  border: 2px solid rgb(180, 180, 247);
+  padding: 0.5rem;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.personal-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0.5rem auto;
+  padding: 1.5rem;
+  border: red;
+  border-radius: 5px;
+}
+
+.phone-and-email {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'phone-label email-label'
+    'phone       email';
+}
+
+.phone-and-email > .phone-label {
+  grid-area: phone-label;
+}
+
+.phone-and-email > #phone {
+  width: 90%;
+  grid-area: phone;
+}
+
+.personal-section > .email-label {
+  grid-area: email-label;
+}
+
+.personal-section > #email {
+  grid-area: email;
+}
+
+.company-info {
+  max-width: 800px;
+  margin: 0.5rem auto;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'start-label end-label'
+    'startDate   endDate';
+}
+
+.dates > .start-label {
+  grid-area: start-label;
+}
+
+.dates > #start-date {
+  width: 90%;
+  grid-area: startDate;
+}
+
+.dates > .end-label {
+  grid-area: end-label;
+}
+
+.dates > #end-date {
+  grid-area: endDate;
+}
+
+.education-info {
+  max-width: 800px;
+  margin: 0.5rem auto;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.submitBtn {
+  height: 50px;
+  width: 100px;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  background-color: rgb(255, 210, 62);
+  color: rgb(0, 0, 0);
+  border: 3px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: rgb(247, 215, 111);
+}
+
+.submitBtn:active {
+  background-color: rgb(196, 150, 0);
+}

@@ -1,0 +1,14 @@
+.App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.form-container {
+  background-color: #222121;
+  height: fit-content;
+  width: 900px;
+  border: 4px solid rgb(226, 226, 226);
+  border-radius: 5px;
+}
