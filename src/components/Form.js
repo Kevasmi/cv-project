@@ -7,13 +7,17 @@ import PersonalInformation from './PersonalInformation';
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    this.props.onSubmitEvent(e);
   }
 
   render() {
     return (
       <div className='form-container'>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <PersonalInformation
             personalInfo={this.props.personalInfo}
             onPersonalInputChange={this.props.onPersonalInputChange}

@@ -9,6 +9,7 @@ class App extends React.Component {
     this.handlePersonalInputChange = this.handlePersonalInputChange.bind(this);
     this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       personalInfo: {
         name: '',
@@ -30,6 +31,7 @@ class App extends React.Component {
         startDate: '',
         endDate: '',
       },
+      formNotSubmitted: true,
     };
   }
 
@@ -43,7 +45,7 @@ class App extends React.Component {
         [name]: value,
       },
     }));
-    console.log(this.state.professionalInfo);
+    console.log(this.state.personalInfo);
   }
 
   handleProfessionalChange(e) {
@@ -72,22 +74,31 @@ class App extends React.Component {
     console.log(this.state.educationInfo);
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState((prevState) => ({
+      ...prevState,
+      formNotSubmitted: false,
+    }));
+  }
+
   render() {
     return (
       <div className='App'>
-        <section className='form-side'>
+        {this.state.formNotSubmitted ? (
           <Form
             personalInfo={this.state.personalInfo}
             professionalInfo={this.state.professionalInfo}
             educationInfo={this.state.educationInfo}
+            formSubmitted={this.state.formSubmitted}
             onPersonalInputChange={this.handlePersonalInputChange}
             onProfessionalChange={this.handleProfessionalChange}
             onEducationChange={this.handleEducationChange}
+            onSubmitEvent={this.handleSubmit}
           />
-        </section>
-        <section className='cv-side'>
+        ) : (
           <CurriculumVitae />
-        </section>
+        )}
       </div>
     );
   }
