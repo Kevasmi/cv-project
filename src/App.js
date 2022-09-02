@@ -97,7 +97,11 @@ class App extends React.Component {
             onSubmitEvent={this.handleSubmit}
           />
         ) : (
-          <CurriculumVitae />
+            <CurriculumVitae
+              personalInfo={this.state.personalInfo}
+              professionalInfo={this.state.professionalInfo}
+              educationInfo={this.state.educationInfo}
+            />
         )}
       </div>
     );
