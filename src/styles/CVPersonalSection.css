@@ -1,0 +1,22 @@
+.cv-name {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 70px;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+}
+
+.cv-header > ul {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 1rem;
+  margin-left: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cv-header > ul > li span {
+  position: relative;
+  left: 8px;
+}

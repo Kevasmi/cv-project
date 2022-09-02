@@ -1,0 +1,44 @@
+.cv-education-container {
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto 20px 1fr;
+  grid-template-areas:
+    'education-name degree'
+    'city           description'
+    'date           description';
+  column-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  margin: 1rem 0 2rem 6rem;
+  text-align: left;
+}
+
+.cv-education-name {
+  grid-area: education-name;
+  font-size: 1.3rem;
+}
+
+.cv-education-degree {
+  grid-area: degree;
+  font-weight: bold;
+}
+
+.cv-education-city {
+  grid-area: city;
+  padding-left: 0.7rem;
+}
+
+.cv-education-date {
+  grid-area: date;
+  font-size: 0.8rem;
+  font-style: italic;
+  padding-bottom: 2.2rem;
+  padding-left: 0.7rem;
+}
+
+.cv-education-description {
+  grid-area: description;
+  margin-top: 0.5rem;
+}
