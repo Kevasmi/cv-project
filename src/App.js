@@ -30,6 +30,7 @@ class App extends React.Component {
         degree: '',
         startDate: '',
         endDate: '',
+        description: '',
       },
       formNotSubmitted: true,
     };
@@ -85,24 +86,29 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        {this.state.formNotSubmitted ? (
-          <Form
-            personalInfo={this.state.personalInfo}
-            professionalInfo={this.state.professionalInfo}
-            educationInfo={this.state.educationInfo}
-            formSubmitted={this.state.formSubmitted}
-            onPersonalInputChange={this.handlePersonalInputChange}
-            onProfessionalChange={this.handleProfessionalChange}
-            onEducationChange={this.handleEducationChange}
-            onSubmitEvent={this.handleSubmit}
-          />
-        ) : (
+        <header className='main-header'>
+          <h1 className='main-title'>CV Generator</h1>
+        </header>
+        <main>
+          {this.state.formNotSubmitted ? (
+            <Form
+              personalInfo={this.state.personalInfo}
+              professionalInfo={this.state.professionalInfo}
+              educationInfo={this.state.educationInfo}
+              formSubmitted={this.state.formSubmitted}
+              onPersonalInputChange={this.handlePersonalInputChange}
+              onProfessionalChange={this.handleProfessionalChange}
+              onEducationChange={this.handleEducationChange}
+              onSubmitEvent={this.handleSubmit}
+            />
+          ) : (
             <CurriculumVitae
               personalInfo={this.state.personalInfo}
               professionalInfo={this.state.professionalInfo}
               educationInfo={this.state.educationInfo}
             />
-        )}
+          )}
+        </main>
       </div>
     );
   }

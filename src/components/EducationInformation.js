@@ -14,7 +14,7 @@ class EducationInformation extends React.Component {
     return (
       <section className='education-info'>
         <h2>Education Information</h2>
-        <label htmlFor='name'>Name </label>
+        <label htmlFor='name'>University Name </label>
         <input
           type='text'
           id='name'
@@ -60,6 +60,13 @@ class EducationInformation extends React.Component {
             onChange={this.handleEducationChange}
           ></input>
         </section>
+        <label htmlFor='education-description'>Description</label>
+        <textarea
+          id='education-description'
+          name='description'
+          value={this.props.educationInfo.description}
+          onChange={this.handleEducationChange}
+        ></textarea>
       </section>
     );
   }
