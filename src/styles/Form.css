@@ -1,5 +1,10 @@
 form {
-  color: #fff370;
+  background-color: hsl(0, 0%, 100%);
+  height: fit-content;
+  width: 900px;
+  border: 1px solid hsl(0, 0%, 0%);
+  margin: 1rem;
+  padding: 1rem;
 }
 
 label {
@@ -13,20 +18,35 @@ input,
 textarea {
   display: block;
   width: 100%;
-  border: 2px solid rgb(180, 180, 247);
+  border: 2px solid hsl(240, 81%, 84%);
   padding: 0.5rem;
   font-size: 18px;
   border-radius: 5px;
 }
 
-.personal-section {
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 3px solid hsl(240, 100%, 50%);
+}
+
+.personal-section,
+.company-info,
+.education-info {
   display: flex;
   flex-direction: column;
   max-width: 800px;
-  margin: 0.5rem auto;
+  margin: 0 auto;
   padding: 1.5rem;
-  border: red;
-  border-radius: 5px;
+}
+
+.personal-section > h2,
+.company-info > h2,
+.education-info > h2 {
+  align-self: center;
+  width: 40%;
+  border-bottom: 4px solid black;
+  border-radius: 2px;
 }
 
 .phone-and-email {
@@ -55,13 +75,6 @@ textarea {
   grid-area: email;
 }
 
-.company-info {
-  max-width: 800px;
-  margin: 0.5rem auto;
-  padding: 1.5rem;
-  border-radius: 5px;
-}
-
 .dates {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -88,29 +101,22 @@ textarea {
   grid-area: endDate;
 }
 
-.education-info {
-  max-width: 800px;
-  margin: 0.5rem auto;
-  padding: 1.5rem;
-  border-radius: 5px;
-}
-
 .submitBtn {
-  height: 50px;
-  width: 100px;
+  height: 60px;
+  width: 110px;
   margin-bottom: 1rem;
   font-size: 1.5rem;
-  background-color: rgb(255, 210, 62);
-  color: rgb(0, 0, 0);
-  border: 3px solid white;
+  background-color: hsl(46, 100%, 62%);
+  color: hsl(0, 0%, 0%);
+  border: 3px solid hsl(0, 0%, 100%);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .submitBtn:hover {
-  background-color: rgb(247, 215, 111);
+  background-color: hsl(46, 100%, 38%);
 }
 
 .submitBtn:active {
-  background-color: rgb(196, 150, 0);
+  background-color: hsl(46, 89%, 70%);
 }
