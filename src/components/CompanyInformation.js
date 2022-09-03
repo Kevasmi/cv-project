@@ -54,7 +54,6 @@ class CompanyInformation extends React.Component {
         </section>
         <label htmlFor='description-one'>Description of duties </label>
         <textarea
-          // type='textarea'
           id='description-one'
           name='description'
           value={this.props.professionalInfo.description}

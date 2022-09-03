@@ -95,7 +95,6 @@ class App extends React.Component {
               personalInfo={this.state.personalInfo}
               professionalInfo={this.state.professionalInfo}
               educationInfo={this.state.educationInfo}
-              formSubmitted={this.state.formSubmitted}
               onPersonalInputChange={this.handlePersonalInputChange}
               onProfessionalChange={this.handleProfessionalChange}
               onEducationChange={this.handleEducationChange}
@@ -103,6 +102,7 @@ class App extends React.Component {
             />
           ) : (
             <CurriculumVitae
+              formSubmitted={this.state.formNotSubmitted}
               personalInfo={this.state.personalInfo}
               professionalInfo={this.state.professionalInfo}
               educationInfo={this.state.educationInfo}

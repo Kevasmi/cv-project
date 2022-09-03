@@ -5,9 +5,6 @@ class CVPersonalSection extends React.Component {
   render() {
     return (
       <section className='cv-personal-info'>
-        <button className='edit-button-personal'>
-          <span class='material-symbols-outlined'>edit</span>
-        </button>
         <h1 className='cv-name'>{this.props.personalInfo.name}</h1>
         <header className='cv-header'>
           <ul>
