@@ -1,3 +1,31 @@
+.cv-personal-info {
+  position: relative;
+}
+
+.edit-button-personal {
+  position: absolute;
+  left: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background-color: hsl(0, 53%, 58%);
+  color: white;
+  cursor: pointer;
+}
+
+.edit-button-personal:hover {
+  background-color: hsl(0, 60%, 69%);
+}
+
+.edit-button-personal:active {
+  background-color: hsl(0, 45%, 49%);
+}
+
 .cv-name {
   display: flex;
   justify-content: left;

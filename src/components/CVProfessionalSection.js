@@ -7,6 +7,9 @@ class CVProfessionalSection extends React.Component {
       <section className='cv-professional-info'>
         <h2 className='cv-professional-title'>Professional History</h2>
         <section className='cv-professional-container'>
+          <button className='edit-button-professional'>
+            <span class='material-symbols-outlined'>edit</span>
+          </button>
           <h3 className='cv-professional-name'>
             {this.props.professionalInfo.name}
           </h3>
