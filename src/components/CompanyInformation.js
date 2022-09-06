@@ -13,7 +13,6 @@ class CompanyInformation extends React.Component {
   render() {
     return (
       <section className='company-info'>
-        <h2>Professional Information</h2>
         <label htmlFor='company-name'>Company Name </label>
         <input
           type='text'

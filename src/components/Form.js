@@ -18,14 +18,17 @@ class Form extends React.Component {
     return (
       <div className='form-container'>
         <form onSubmit={this.handleSubmit}>
+          <h2 className='form-personal-header'>Personal Information</h2>
           <PersonalInformation
             personalInfo={this.props.personalInfo}
             onPersonalInputChange={this.props.onPersonalInputChange}
           />
+          <h2 className='form-professional-header'>Professional Information</h2>
           <CompanyInformation
             professionalInfo={this.props.professionalInfo}
             onProfessionalChange={this.props.onProfessionalChange}
           />
+          <h2 className='form-education-header'>Education Information</h2>
           <EducationInformation
             educationInfo={this.props.educationInfo}
             onEducationChange={this.props.onEducationChange}

@@ -40,11 +40,11 @@ textarea:focus {
   padding: 1.5rem;
 }
 
-.personal-section > h2,
-.company-info > h2,
-.education-info > h2 {
-  align-self: center;
+.form-personal-header,
+.form-professional-header,
+.form-education-header {
   width: 40%;
+  margin: auto;
   border-bottom: 4px solid black;
   border-radius: 2px;
 }

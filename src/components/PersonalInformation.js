@@ -13,7 +13,6 @@ class PersonalInformation extends React.Component {
   render() {
     return (
       <section className='personal-section'>
-        <h2>Personal Information</h2>
         <label htmlFor='name'>Name </label>
         <input
           type='text'

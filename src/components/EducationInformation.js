@@ -13,7 +13,6 @@ class EducationInformation extends React.Component {
   render() {
     return (
       <section className='education-info'>
-        <h2>Education Information</h2>
         <label htmlFor='name'>University Name </label>
         <input
           type='text'
