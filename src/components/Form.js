@@ -23,12 +23,26 @@ class Form extends React.Component {
             personalInfo={this.props.personalInfo}
             onPersonalInputChange={this.props.onPersonalInputChange}
           />
-          <h2 className='form-professional-header'>Professional Information</h2>
+          <h2 className='form-professional-header'>
+            Professional Information{' '}
+            <span>
+              <button type='button' className='professional-header-button'>
+                + Add
+              </button>
+            </span>
+          </h2>
           <CompanyInformation
             professionalInfo={this.props.professionalInfo}
             onProfessionalChange={this.props.onProfessionalChange}
           />
-          <h2 className='form-education-header'>Education Information</h2>
+          <h2 className='form-education-header'>
+            Education Information{' '}
+            <span>
+              <button type='button' className='education-header-button'>
+                + Add
+              </button>
+            </span>
+          </h2>
           <EducationInformation
             educationInfo={this.props.educationInfo}
             onEducationChange={this.props.onEducationChange}
