@@ -79,7 +79,7 @@ class App extends React.Component {
     e.preventDefault();
     this.setState((prevState) => ({
       ...prevState,
-      formNotSubmitted: false,
+      formNotSubmitted: this.state.formNotSubmitted ? false : true,
     }));
   }
 
@@ -106,6 +106,7 @@ class App extends React.Component {
               personalInfo={this.state.personalInfo}
               professionalInfo={this.state.professionalInfo}
               educationInfo={this.state.educationInfo}
+              onEditClick={this.handleSubmit}
             />
           )}
         </main>
