@@ -34,17 +34,6 @@ class Form extends React.Component {
             onAdd={this.props.onAddProfessionalSection}
             onChange={this.props.onProfessionalChange}
           />
-            Professional Information{' '}
-            <span>
-              <button type='button' className='professional-header-button'>
-                + Add
-              </button>
-            </span>
-          </h2>
-          <CompanyInformation
-            professionalInfo={this.props.professionalInfo}
-            onProfessionalChange={this.props.onProfessionalChange}
-          />
           <h2 className='form-education-header'>
             Education Information{' '}
             <span>
