@@ -34,8 +34,8 @@ class App extends React.Component {
   }
 
   handlePersonalInputChange(e) {
-    const name = e.target.name;
-    const { value } = e.target;
+    const { name, value } = e.target;
+
     this.setState((prevState) => ({
       ...prevState,
       personalInfo: {
@@ -84,9 +84,9 @@ class App extends React.Component {
     );
   }
 
-  handleEducationChange(e) {
-    const name = e.target.name;
-    const { value } = e.target;
+  handleEducationChange(e, id) {
+    const { name, value } = e.target;
+
     this.setState((prevState) => ({
       ...prevState,
       educationInfo: {
