@@ -7,7 +7,13 @@ import ProfessionalList from './ProfessionalList';
 class Form extends React.Component {
   constructor(props) {
     super(props);
+    this.handleAddProfessionalSection =
+      this.handleAddProfessionalSection.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleAddProfessionalSection() {
+    this.props.onAddProfessionalSection();
   }
 
   handleSubmit(e) {
