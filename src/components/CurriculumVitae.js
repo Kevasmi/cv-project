@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/CurriculumVitae.css';
 import CVEducationSection from './CVEducationSection';
 import CVPersonalSection from './CVPersonalSection';
-import CVProfessionalSection from './CVProfessionalSection';
+import CVProfessionalList from './CVProfessionalList';
 
 class CurriculumVitae extends React.Component {
   constructor(props) {
@@ -18,10 +18,11 @@ class CurriculumVitae extends React.Component {
     return (
       <div className='cv-container'>
         <button className='edit-button' onClick={this.handleEditClick}>
-          <span class='material-symbols-outlined'>edit</span>
+          <span className='material-symbols-outlined'>edit</span>
         </button>
         <CVPersonalSection personalInfo={this.props.personalInfo} />
-        <CVProfessionalSection professionalInfo={this.props.professionalInfo} />
+        <h2 className='cv-professional-title'>Professional History</h2>
+        <CVProfessionalList professionalInfo={this.props.professionalInfo} />
         <CVEducationSection educationInfo={this.props.educationInfo} />
       </div>
     );
