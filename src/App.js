@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/App.css';
 import CurriculumVitae from './components/CurriculumVitae';
 import Form from './components/Form';
+import uniqid from 'uniqid';
 
 class App extends React.Component {
   constructor() {
@@ -9,6 +10,8 @@ class App extends React.Component {
     this.handlePersonalInputChange = this.handlePersonalInputChange.bind(this);
     this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleAddProfessionalSection =
+      this.handleAddProfessionalSection.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       personalInfo: {
@@ -53,13 +56,26 @@ class App extends React.Component {
     const name = e.target.name;
     const { value } = e.target;
     this.setState((prevState) => ({
+  handleAddProfessionalSection() {
+    this.setState(
+      (prevState) => ({
       ...prevState,
-      professionalInfo: {
+        professionalInfo: [
         ...prevState.professionalInfo,
-        [name]: value,
+          {
+            role: '',
+            startDate: '',
+            endDate: '',
+            name: '',
+            description: '',
+            id: uniqid(),
       },
-    }));
+        ],
+      }),
+      () => {
     console.log(this.state.professionalInfo);
+      }
+    );
   }
 
   handleEducationChange(e) {
