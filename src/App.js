@@ -120,11 +120,12 @@ class App extends React.Component {
         <main>
           {this.state.formNotSubmitted ? (
             <Form
+              info={this.state}
               personalInfo={this.state.personalInfo}
-              professionalInfo={this.state.professionalInfo}
               educationInfo={this.state.educationInfo}
               onPersonalInputChange={this.handlePersonalInputChange}
               onProfessionalChange={this.handleProfessionalChange}
+              onAddProfessionalSection={this.handleAddProfessionalSection}
               onEducationChange={this.handleEducationChange}
               onSubmitEvent={this.handleSubmit}
             />
