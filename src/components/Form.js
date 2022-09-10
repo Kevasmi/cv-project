@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/Form.css';
-import CompanyInformation from './CompanyInformation';
 import EducationInformation from './EducationInformation';
 import PersonalInformation from './PersonalInformation';
+import ProfessionalList from './ProfessionalList';
 
 class Form extends React.Component {
   constructor(props) {
@@ -23,7 +23,11 @@ class Form extends React.Component {
             personalInfo={this.props.personalInfo}
             onPersonalInputChange={this.props.onPersonalInputChange}
           />
-          <h2 className='form-professional-header'>
+          <ProfessionalList
+            professionalInfo={this.props.info.professionalInfo}
+            onAdd={this.props.onAddProfessionalSection}
+            onChange={this.props.onProfessionalChange}
+          />
             Professional Information{' '}
             <span>
               <button type='button' className='professional-header-button'>
