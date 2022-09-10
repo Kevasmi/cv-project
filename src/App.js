@@ -52,16 +52,28 @@ class App extends React.Component {
     console.log(this.state.personalInfo);
   }
 
-  handleProfessionalChange(e) {
-    const name = e.target.name;
-    const { value } = e.target;
-    this.setState((prevState) => ({
+  handleProfessionalChange(e, id) {
+    const { name, value } = e.target;
+
+    this.setState((prevState) => {
+      const newProfessional = prevState.professionalInfo.map(
+        (professionalItem) => {
+          if (professionalItem.id === id) {
+            return { ...professionalItem, [name]: [value] };
+          }
+          return professionalItem;
+        }
+      );
+      return { ...prevState, professionalInfo: [...newProfessional] };
+    });
+  }
+
   handleAddProfessionalSection() {
     this.setState(
       (prevState) => ({
-      ...prevState,
+        ...prevState,
         professionalInfo: [
-        ...prevState.professionalInfo,
+          ...prevState.professionalInfo,
           {
             role: '',
             startDate: '',
@@ -69,11 +81,11 @@ class App extends React.Component {
             name: '',
             description: '',
             id: uniqid(),
-      },
+          },
         ],
       }),
       () => {
-    console.log(this.state.professionalInfo);
+        console.log(this.state.professionalInfo);
       }
     );
   }
