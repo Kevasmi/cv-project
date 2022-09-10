@@ -20,13 +20,7 @@ class App extends React.Component {
         email: '',
         address: '',
       },
-      professionalInfo: {
-        role: '',
-        startDate: '',
-        endDate: '',
-        name: '',
-        description: '',
-      },
+      professionalInfo: [],
       educationInfo: {
         name: '',
         city: '',
