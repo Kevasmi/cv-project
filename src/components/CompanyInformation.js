@@ -7,7 +7,7 @@ class CompanyInformation extends React.Component {
   }
 
   handleProfessionalChange(e) {
-    this.props.onProfessionalChange(e);
+    this.props.onChange(e, this.props.id);
   }
 
   render() {
@@ -18,7 +18,7 @@ class CompanyInformation extends React.Component {
           type='text'
           id='company-name'
           name='name'
-          value={this.props.professionalInfo.name}
+          value={this.props.professionalItem.name}
           onChange={this.handleProfessionalChange}
         ></input>
         <label htmlFor='role-one'>Role </label>
@@ -26,7 +26,7 @@ class CompanyInformation extends React.Component {
           type='text'
           id='role-one'
           name='role'
-          value={this.props.professionalInfo.role}
+          value={this.props.professionalItem.role}
           onChange={this.handleProfessionalChange}
         ></input>
         <section className='dates'>
@@ -37,7 +37,7 @@ class CompanyInformation extends React.Component {
             type='date'
             id='start-date'
             name='startDate'
-            value={this.props.professionalInfo.startDate}
+            value={this.props.professionalItem.startDate}
             onChange={this.handleProfessionalChange}
           ></input>
           <label htmlFor='end-date' className='end-label'>
@@ -47,7 +47,7 @@ class CompanyInformation extends React.Component {
             type='date'
             id='end-date'
             name='endDate'
-            value={this.props.professionalInfo.endDate}
+            value={this.props.professionalItem.endDate}
             onChange={this.handleProfessionalChange}
           ></input>
         </section>
@@ -55,7 +55,7 @@ class CompanyInformation extends React.Component {
         <textarea
           id='description-one'
           name='description'
-          value={this.props.professionalInfo.description}
+          value={this.props.professionalItem.description}
           onChange={this.handleProfessionalChange}
         ></textarea>
       </section>
