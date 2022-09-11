@@ -26,7 +26,7 @@ class Form extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <h2 className='form-personal-header'>Personal Information</h2>
           <PersonalInformation
-            personalInfo={this.props.personalInfo}
+            personalInfo={this.props.info.personalInfo}
             onPersonalInputChange={this.props.onPersonalInputChange}
           />
           <ProfessionalList
@@ -43,7 +43,7 @@ class Form extends React.Component {
             </span>
           </h2>
           <EducationInformation
-            educationInfo={this.props.educationInfo}
+            educationInfo={this.props.info.educationInfo}
             onEducationChange={this.props.onEducationChange}
           />
           <button type='submit' className='submitBtn'>
