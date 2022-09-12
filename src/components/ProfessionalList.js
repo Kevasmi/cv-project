@@ -24,7 +24,7 @@ class ProfessionalList extends React.Component {
     ));
 
     return (
-      <div>
+      <div className='professional-list'>
         <h2 className='form-professional-header'>
           Professional Information{' '}
           <span>
@@ -37,9 +37,11 @@ class ProfessionalList extends React.Component {
             </button>
           </span>
         </h2>
-        <div>
-          {professionalItems.length ? professionalItems : 'No sections added.'}
-        </div>
+        {professionalItems.length ? (
+          <div>{professionalItems}</div>
+        ) : (
+          <p>No sections added.</p>
+        )}
       </div>
     );
   }

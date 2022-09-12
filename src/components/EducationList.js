@@ -22,7 +22,7 @@ class EducationList extends React.Component {
       />
     ));
     return (
-      <div>
+      <div className='education-list'>
         <h2 className='form-education-header'>
           Education Information{' '}
           <span>
@@ -35,9 +35,11 @@ class EducationList extends React.Component {
             </button>
           </span>
         </h2>
-        <div>
-          {educationItems.length ? educationItems : 'No sections added.'}
-        </div>
+        {educationItems.length ? (
+          <div>{educationItems}</div>
+        ) : (
+          <p>No sections added.</p>
+        )}
       </div>
     );
   }
