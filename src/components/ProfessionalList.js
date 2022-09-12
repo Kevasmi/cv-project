@@ -37,7 +37,9 @@ class ProfessionalList extends React.Component {
             </button>
           </span>
         </h2>
-        <div>{professionalItems}</div>
+        <div>
+          {professionalItems.length ? professionalItems : 'No sections added.'}
+        </div>
       </div>
     );
   }

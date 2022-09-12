@@ -35,7 +35,9 @@ class EducationList extends React.Component {
             </button>
           </span>
         </h2>
-        <div>{educationItems}</div>
+        <div>
+          {educationItems.length ? educationItems : 'No sections added.'}
+        </div>
       </div>
     );
   }
