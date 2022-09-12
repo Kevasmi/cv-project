@@ -87,14 +87,28 @@ class App extends React.Component {
   handleEducationChange(e, id) {
     const { name, value } = e.target;
 
-    this.setState((prevState) => ({
-      ...prevState,
-      educationInfo: {
-        ...prevState.educationInfo,
-        [name]: value,
-      },
-    }));
-    console.log(this.state.educationInfo);
+
+  handleAddEducationSection() {
+    this.setState(
+      (prevState) => ({
+        ...prevState,
+        educationInfo: [
+          ...prevState.educationInfo,
+          {
+            name: '',
+            city: '',
+            degree: '',
+            startDate: '',
+            endDate: '',
+            description: '',
+            id: uniqid(),
+          },
+        ],
+      }),
+      () => {
+        console.log(this.state.educationInfo);
+      }
+    );
   }
 
   handleSubmit(e) {
