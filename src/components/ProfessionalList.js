@@ -6,7 +6,6 @@ class ProfessionalList extends React.Component {
     super(props);
     this.handleAddProfessionalSection =
       this.handleAddProfessionalSection.bind(this);
-    this.state = {};
   }
 
   handleAddProfessionalSection() {
@@ -38,7 +37,7 @@ class ProfessionalList extends React.Component {
             </button>
           </span>
         </h2>
-        <ul>{professionalItems}</ul>
+        <div>{professionalItems}</div>
       </div>
     );
   }

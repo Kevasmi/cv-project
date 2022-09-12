@@ -21,10 +21,10 @@ class CompanyInformation extends React.Component {
           value={this.props.professionalItem.name}
           onChange={this.handleProfessionalChange}
         ></input>
-        <label htmlFor='role-one'>Role </label>
+        <label htmlFor='role'>Role </label>
         <input
           type='text'
-          id='role-one'
+          id='role'
           name='role'
           value={this.props.professionalItem.role}
           onChange={this.handleProfessionalChange}
@@ -51,9 +51,9 @@ class CompanyInformation extends React.Component {
             onChange={this.handleProfessionalChange}
           ></input>
         </section>
-        <label htmlFor='description-one'>Description of duties </label>
+        <label htmlFor='description'>Description of duties </label>
         <textarea
-          id='description-one'
+          id='description'
           name='description'
           value={this.props.professionalItem.description}
           onChange={this.handleProfessionalChange}
