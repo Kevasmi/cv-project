@@ -87,6 +87,16 @@ class App extends React.Component {
   handleEducationChange(e, id) {
     const { name, value } = e.target;
 
+    this.setState((prevState) => {
+      const newEducation = prevState.educationInfo.map((educationItem) => {
+        if (educationItem.id === id) {
+          return { ...educationItem, [name]: [value] };
+        }
+        return educationItem;
+      });
+      return { ...prevState, educationInfo: [...newEducation] };
+    });
+  }
 
   handleAddEducationSection() {
     this.setState(
