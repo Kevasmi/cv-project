@@ -21,14 +21,7 @@ class App extends React.Component {
         address: '',
       },
       professionalInfo: [],
-      educationInfo: {
-        name: '',
-        city: '',
-        degree: '',
-        startDate: '',
-        endDate: '',
-        description: '',
-      },
+      educationInfo: [],
       formNotSubmitted: true,
     };
   }
