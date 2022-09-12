@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/CurriculumVitae.css';
-import CVEducationSection from './CVEducationSection';
+import CVEducationList from './CVEducationList';
 import CVPersonalSection from './CVPersonalSection';
 import CVProfessionalList from './CVProfessionalList';
 
@@ -23,7 +23,8 @@ class CurriculumVitae extends React.Component {
         <CVPersonalSection personalInfo={this.props.personalInfo} />
         <h2 className='cv-professional-title'>Professional History</h2>
         <CVProfessionalList professionalInfo={this.props.professionalInfo} />
-        <CVEducationSection educationInfo={this.props.educationInfo} />
+        <h2 className='cv-education-title'>Education</h2>
+        <CVEducationList educationInfo={this.props.educationInfo} />
       </div>
     );
   }
