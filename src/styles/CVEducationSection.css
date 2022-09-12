@@ -8,7 +8,7 @@
   position: relative;
   display: grid;
   flex-direction: column;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto minmax(300px, 350px);
   grid-template-rows: auto 20px 1fr;
   grid-template-areas:
     'education-name degree'
@@ -22,39 +22,16 @@
   text-align: left;
 }
 
-.edit-button-education {
-  position: absolute;
-  left: 600px;
-  top: -5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 40px;
-  outline: none;
-  border: none;
-  border-radius: 50%;
-  background-color: hsl(0, 53%, 58%);
-  color: white;
-  cursor: pointer;
-}
-
-.edit-button-education:hover {
-  background-color: hsl(0, 60%, 69%);
-}
-
-.edit-button-education:active {
-  background-color: hsl(0, 45%, 49%);
-}
-
 .cv-education-name {
   grid-area: education-name;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .cv-education-degree {
   grid-area: degree;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: underline;
 }
 
 .cv-education-city {
@@ -73,4 +50,5 @@
 .cv-education-description {
   grid-area: description;
   margin-top: 0.5rem;
+  font-size: 0.9rem;
 }

@@ -35,3 +35,8 @@
 .edit-button:active {
   background-color: hsl(0, 45%, 49%);
 }
+
+.cv-professional-list,
+.cv-education-list {
+  min-height: 210px;
+}
