@@ -5,22 +5,18 @@ class CVEducationSection extends React.Component {
   render() {
     return (
       <section className='cv-education-info'>
-        <h2 className='cv-education-title'>Education</h2>
         <section className='cv-education-container'>
-          {/* <button className='edit-button-education'>
-            <span class='material-symbols-outlined'>edit</span>
-          </button> */}
-          <h3 className='cv-education-name'>{this.props.educationInfo.name}</h3>
-          <p className='cv-education-city'>{this.props.educationInfo.city}</p>
+          <h3 className='cv-education-name'>{this.props.educationItem.name}</h3>
+          <p className='cv-education-city'>{this.props.educationItem.city}</p>
           <p className='cv-education-degree'>
-            {this.props.educationInfo.degree}
+            {this.props.educationItem.degree}
           </p>
           <p className='cv-education-date'>
-            {this.props.educationInfo.startDate} to{' '}
-            {this.props.educationInfo.endDate}
+            {this.props.educationItem.startDate} to{' '}
+            {this.props.educationItem.endDate}
           </p>
           <p className='cv-education-description'>
-            {this.props.educationInfo.description}
+            {this.props.educationItem.description}
           </p>
         </section>
       </section>
