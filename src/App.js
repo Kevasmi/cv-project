@@ -9,9 +9,10 @@ class App extends React.Component {
     super();
     this.handlePersonalInputChange = this.handlePersonalInputChange.bind(this);
     this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
-    this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddProfessionalSection =
       this.handleAddProfessionalSection.bind(this);
+    this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleAddEducationSection = this.handleAddEducationSection.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       personalInfo: {
@@ -136,6 +137,7 @@ class App extends React.Component {
               onProfessionalChange={this.handleProfessionalChange}
               onAddProfessionalSection={this.handleAddProfessionalSection}
               onEducationChange={this.handleEducationChange}
+              onAddEducationSection={this.handleAddEducationSection}
               onSubmitEvent={this.handleSubmit}
             />
           ) : (
