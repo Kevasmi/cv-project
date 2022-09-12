@@ -7,18 +7,18 @@ class EducationInformation extends React.Component {
   }
 
   handleEducationChange(e) {
-    this.props.onEducationChange(e);
+    this.props.onChange(e, this.props.id);
   }
 
   render() {
     return (
       <section className='education-info'>
-        <label htmlFor='name'>University Name </label>
+        <label htmlFor='education-name'>University Name </label>
         <input
           type='text'
-          id='name'
+          id='education-name'
           name='name'
-          value={this.props.educationInfo.name}
+          value={this.props.educationItem.name}
           onChange={this.handleEducationChange}
         ></input>
         <label htmlFor='city'>City </label>
@@ -26,7 +26,7 @@ class EducationInformation extends React.Component {
           type='text'
           id='city'
           name='city'
-          value={this.props.educationInfo.city}
+          value={this.props.educationItem.city}
           onChange={this.handleEducationChange}
         ></input>
         <label htmlFor='degree'>Degree </label>
@@ -34,7 +34,7 @@ class EducationInformation extends React.Component {
           type='text'
           id='degree'
           name='degree'
-          value={this.props.educationInfo.degree}
+          value={this.props.educationItem.degree}
           onChange={this.handleEducationChange}
         ></input>
         <section className='dates'>
@@ -45,7 +45,7 @@ class EducationInformation extends React.Component {
             type='date'
             id='start-date'
             name='startDate'
-            value={this.props.educationInfo.startDate}
+            value={this.props.educationItem.startDate}
             onChange={this.handleEducationChange}
           ></input>
           <label htmlFor='end-date' className='end-label'>
@@ -55,15 +55,15 @@ class EducationInformation extends React.Component {
             type='date'
             id='end-date'
             name='endDate'
-            value={this.props.educationInfo.endDate}
+            value={this.props.educationItem.endDate}
             onChange={this.handleEducationChange}
           ></input>
         </section>
-        <label htmlFor='education-description'>Description</label>
+        <label htmlFor='description'>Description</label>
         <textarea
-          id='education-description'
+          id='description'
           name='description'
-          value={this.props.educationInfo.description}
+          value={this.props.educationItem.description}
           onChange={this.handleEducationChange}
         ></textarea>
       </section>
