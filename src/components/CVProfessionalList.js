@@ -12,7 +12,11 @@ class CVProfessionalList extends React.Component {
       />
     ));
 
-    return <ul>{professionalItems.length ? professionalItems : ''}</ul>;
+    return (
+      <ul className='cv-professional-list'>
+        {professionalItems.length ? professionalItems : ''}
+      </ul>
+    );
   }
 }
 

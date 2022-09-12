@@ -10,7 +10,11 @@ class CVEducationList extends React.Component {
         educationItem={educationItem}
       />
     ));
-    return <ul>{educationItems.length ? educationItems : ''}</ul>;
+    return (
+      <ul className='cv-education-list'>
+        {educationItems.length ? educationItems : ''}
+      </ul>
+    );
   }
 }
 
