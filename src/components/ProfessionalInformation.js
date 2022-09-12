@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CompanyInformation extends React.Component {
+class ProfessionalInformation extends React.Component {
   constructor(props) {
     super(props);
     this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
@@ -63,4 +63,4 @@ class CompanyInformation extends React.Component {
   }
 }
 
-export default CompanyInformation;
+export default ProfessionalInformation;

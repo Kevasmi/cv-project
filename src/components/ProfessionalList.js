@@ -1,5 +1,5 @@
 import React from 'react';
-import CompanyInformation from './CompanyInformation';
+import ProfessionalInformation from './ProfessionalInformation';
 
 class ProfessionalList extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class ProfessionalList extends React.Component {
   render() {
     const itemArray = this.props.professionalInfo;
     const professionalItems = itemArray.map((professionalItem) => (
-      <CompanyInformation
+      <ProfessionalInformation
         key={professionalItem.id}
         id={professionalItem.id}
         professionalItem={professionalItem}
