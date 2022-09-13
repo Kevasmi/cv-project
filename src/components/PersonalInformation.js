@@ -21,6 +21,7 @@ class PersonalInformation extends React.Component {
           name='name'
           value={this.props.personalInfo.name}
           onChange={this.handlePersonalInputChange}
+          required
         ></input>
         <section className='phone-and-email'>
           <label htmlFor='phone' className='phone-label'>
@@ -33,6 +34,7 @@ class PersonalInformation extends React.Component {
             name='phone'
             value={this.props.personalInfo.phone}
             onChange={this.handlePersonalInputChange}
+            required
           ></input>
           <label htmlFor='email' className='email-label'>
             E-Mail{' '}
@@ -40,10 +42,11 @@ class PersonalInformation extends React.Component {
           <input
             type='email'
             id='email'
-            placeholder='e.g. lasco@egmail.com'
+            placeholder='e.g. lasco@gmail.com'
             name='email'
             value={this.props.personalInfo.email}
             onChange={this.handlePersonalInputChange}
+            required
           ></input>
         </section>
         <label htmlFor='home-address'>Address </label>
@@ -54,6 +57,7 @@ class PersonalInformation extends React.Component {
           name='address'
           value={this.props.personalInfo.address}
           onChange={this.handlePersonalInputChange}
+          required
         ></input>
       </section>
     );

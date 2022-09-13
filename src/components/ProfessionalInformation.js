@@ -32,6 +32,7 @@ class ProfessionalInformation extends React.Component {
           name='name'
           value={this.props.professionalItem.name}
           onChange={this.handleProfessionalChange}
+          required
         ></input>
         <label htmlFor='role'>Role </label>
         <input
@@ -40,6 +41,7 @@ class ProfessionalInformation extends React.Component {
           name='role'
           value={this.props.professionalItem.role}
           onChange={this.handleProfessionalChange}
+          required
         ></input>
         <section className='dates'>
           <label htmlFor='start-date' className='start-label'>
@@ -51,6 +53,7 @@ class ProfessionalInformation extends React.Component {
             name='startDate'
             value={this.props.professionalItem.startDate}
             onChange={this.handleProfessionalChange}
+            required
           ></input>
           <label htmlFor='end-date' className='end-label'>
             End date{' '}
@@ -61,6 +64,7 @@ class ProfessionalInformation extends React.Component {
             name='endDate'
             value={this.props.professionalItem.endDate}
             onChange={this.handleProfessionalChange}
+            required
           ></input>
         </section>
         <label htmlFor='description'>Description of duties </label>
@@ -69,6 +73,7 @@ class ProfessionalInformation extends React.Component {
           name='description'
           value={this.props.professionalItem.description}
           onChange={this.handleProfessionalChange}
+          required
         ></textarea>
       </section>
     );

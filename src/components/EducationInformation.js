@@ -32,6 +32,7 @@ class EducationInformation extends React.Component {
           name='name'
           value={this.props.educationItem.name}
           onChange={this.handleEducationChange}
+          required
         ></input>
         <label htmlFor='city'>City </label>
         <input
@@ -40,6 +41,7 @@ class EducationInformation extends React.Component {
           name='city'
           value={this.props.educationItem.city}
           onChange={this.handleEducationChange}
+          required
         ></input>
         <label htmlFor='degree'>Degree </label>
         <input
@@ -48,6 +50,7 @@ class EducationInformation extends React.Component {
           name='degree'
           value={this.props.educationItem.degree}
           onChange={this.handleEducationChange}
+          required
         ></input>
         <section className='dates'>
           <label htmlFor='start-date' className='start-label'>
@@ -59,6 +62,7 @@ class EducationInformation extends React.Component {
             name='startDate'
             value={this.props.educationItem.startDate}
             onChange={this.handleEducationChange}
+            required
           ></input>
           <label htmlFor='end-date' className='end-label'>
             End date{' '}
@@ -69,6 +73,7 @@ class EducationInformation extends React.Component {
             name='endDate'
             value={this.props.educationItem.endDate}
             onChange={this.handleEducationChange}
+            required
           ></input>
         </section>
         <label htmlFor='description'>Description</label>
@@ -77,6 +82,7 @@ class EducationInformation extends React.Component {
           name='description'
           value={this.props.educationItem.description}
           onChange={this.handleEducationChange}
+          required
         ></textarea>
       </section>
     );
