@@ -13,6 +13,12 @@ class EducationInformation extends React.Component {
   render() {
     return (
       <section className='education-info'>
+        <button
+          type='button'
+          className='delete-button'
+        >
+          X
+        </button>
         <label htmlFor='education-name'>University Name </label>
         <input
           type='text'

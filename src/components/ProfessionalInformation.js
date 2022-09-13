@@ -13,6 +13,12 @@ class ProfessionalInformation extends React.Component {
   render() {
     return (
       <section className='company-info'>
+        <button
+          type='button'
+          className='delete-button'
+        >
+          X
+        </button>
         <label htmlFor='company-name'>Company Name </label>
         <input
           type='text'

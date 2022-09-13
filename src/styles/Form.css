@@ -72,6 +72,7 @@ textarea:focus {
   border-radius: 3px;
   background: none;
   cursor: pointer;
+  transition: 0.1s ease-in-out;
 }
 
 .professional-header-button:hover,
@@ -132,6 +133,34 @@ textarea:focus {
   grid-area: endDate;
 }
 
+.company-info,
+.education-info {
+  position: relative;
+}
+
+.delete-button {
+  position: absolute;
+  left: 750px;
+  top: 20px;
+  height: 20px;
+  width: 20px;
+  font-size: 1.3rem;
+  color: hsla(0, 0%, 79%, 0.9);
+  border: none;
+  background: none;
+  transition: 0.1s ease-in-out;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  color: hsla(0, 0%, 60%, 1);
+  font-size: 1.35rem;
+}
+
+.delete-button:active {
+  color: hsla(0, 0%, 50%, 1);
+}
+
 .submitBtn {
   height: 60px;
   width: 110px;
@@ -142,6 +171,7 @@ textarea:focus {
   border: 3px solid hsl(0, 0%, 100%);
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .submitBtn:hover {
