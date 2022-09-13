@@ -11,8 +11,12 @@ class App extends React.Component {
     this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
     this.handleAddProfessionalSection =
       this.handleAddProfessionalSection.bind(this);
+    this.handleRemoveProfessionalSection =
+      this.handleRemoveProfessionalSection.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddEducationSection = this.handleAddEducationSection.bind(this);
+    this.handleRemoveEducationSection =
+      this.handleRemoveEducationSection.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       personalInfo: {
@@ -78,6 +82,17 @@ class App extends React.Component {
     );
   }
 
+  handleRemoveProfessionalSection(id) {
+    this.setState((prevState) => {
+      const newProfessional = prevState.professionalInfo.filter(
+        (professionalItem) => {
+          return professionalItem.id !== id;
+        }
+      );
+      return { ...prevState, professionalInfo: [...newProfessional] };
+    });
+  }
+
   handleEducationChange(e, id) {
     const { name, value } = e.target;
 
@@ -113,6 +128,15 @@ class App extends React.Component {
         console.log(this.state.educationInfo);
       }
     );
+  }
+
+  handleRemoveEducationSection(id) {
+    this.setState((prevState) => {
+      const newEducation = prevState.educationInfo.filter((educationItem) => {
+        return educationItem.id !== id;
+      });
+      return { ...prevState, educationInfo: [...newEducation] };
+    });
   }
 
   handleSubmit(e) {
