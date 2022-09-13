@@ -4,10 +4,15 @@ class EducationInformation extends React.Component {
   constructor(props) {
     super(props);
     this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   handleEducationChange(e) {
     this.props.onChange(e, this.props.id);
+  }
+
+  handleRemove() {
+    this.props.onRemove(this.props.id);
   }
 
   render() {
@@ -16,6 +21,7 @@ class EducationInformation extends React.Component {
         <button
           type='button'
           className='delete-button'
+          onClick={this.handleRemove}
         >
           X
         </button>

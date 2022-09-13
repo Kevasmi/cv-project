@@ -4,10 +4,15 @@ class ProfessionalInformation extends React.Component {
   constructor(props) {
     super(props);
     this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   handleProfessionalChange(e) {
     this.props.onChange(e, this.props.id);
+  }
+
+  handleRemove() {
+    this.props.onRemove(this.props.id);
   }
 
   render() {
@@ -16,6 +21,7 @@ class ProfessionalInformation extends React.Component {
         <button
           type='button'
           className='delete-button'
+          onClick={this.handleRemove}
         >
           X
         </button>

@@ -20,6 +20,7 @@ class ProfessionalList extends React.Component {
         id={professionalItem.id}
         professionalItem={professionalItem}
         onChange={this.props.onChange}
+        onRemove={this.props.onRemove}
       />
     ));
 

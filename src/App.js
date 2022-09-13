@@ -160,8 +160,10 @@ class App extends React.Component {
               onPersonalInputChange={this.handlePersonalInputChange}
               onProfessionalChange={this.handleProfessionalChange}
               onAddProfessionalSection={this.handleAddProfessionalSection}
+              onRemoveProfessionalSection={this.handleRemoveProfessionalSection}
               onEducationChange={this.handleEducationChange}
               onAddEducationSection={this.handleAddEducationSection}
+              onRemoveEducationSection={this.handleRemoveEducationSection}
               onSubmitEvent={this.handleSubmit}
             />
           ) : (

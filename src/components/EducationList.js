@@ -19,6 +19,7 @@ class EducationList extends React.Component {
         id={educationItem.id}
         educationItem={educationItem}
         onChange={this.props.onChange}
+        onRemove={this.props.onRemove}
       />
     ));
     return (

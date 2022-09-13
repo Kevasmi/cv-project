@@ -27,11 +27,13 @@ class Form extends React.Component {
             professionalInfo={this.props.info.professionalInfo}
             onAdd={this.props.onAddProfessionalSection}
             onChange={this.props.onProfessionalChange}
+            onRemove={this.props.onRemoveProfessionalSection}
           />
           <EducationList
             educationInfo={this.props.info.educationInfo}
             onChange={this.props.onEducationChange}
             onAdd={this.props.onAddEducationSection}
+            onRemove={this.props.onRemoveEducationSection}
           />
 
           <button type='submit' className='submitBtn'>
