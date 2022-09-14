@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/http//Kevasmi.github.io/cv-project/static/css/main.89f94ace.css",
+    "main.js": "/http//Kevasmi.github.io/cv-project/static/js/main.fd601182.js",
+    "index.html": "/http//Kevasmi.github.io/cv-project/index.html",
+    "main.89f94ace.css.map": "/http//Kevasmi.github.io/cv-project/static/css/main.89f94ace.css.map",
+    "main.fd601182.js.map": "/http//Kevasmi.github.io/cv-project/static/js/main.fd601182.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89f94ace.css",
+    "static/js/main.fd601182.js"
+  ]
+}
