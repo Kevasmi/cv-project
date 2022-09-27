@@ -1,53 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/App.css';
 import CurriculumVitae from './components/CurriculumVitae';
 import Form from './components/Form';
 import uniqid from 'uniqid';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.handlePersonalInputChange = this.handlePersonalInputChange.bind(this);
-    this.handleProfessionalChange = this.handleProfessionalChange.bind(this);
-    this.handleAddProfessionalSection =
-      this.handleAddProfessionalSection.bind(this);
-    this.handleRemoveProfessionalSection =
-      this.handleRemoveProfessionalSection.bind(this);
-    this.handleEducationChange = this.handleEducationChange.bind(this);
-    this.handleAddEducationSection = this.handleAddEducationSection.bind(this);
-    this.handleRemoveEducationSection =
-      this.handleRemoveEducationSection.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {
-      personalInfo: {
-        name: '',
-        phone: '',
-        email: '',
-        address: '',
-      },
-      professionalInfo: [],
-      educationInfo: [],
-      formNotSubmitted: true,
-    };
-  }
+const App = (props) => {
+  const [state, setState] = useState({
+    personalInfo: {
+      name: '',
+      phone: '',
+      email: '',
+      address: '',
+    },
+    professionalInfo: [],
+    educationInfo: [],
+    formNotSubmitted: true,
+  });
 
-  handlePersonalInputChange(e) {
+  const handlePersonalInputChange = (e) => {
     const { name, value } = e.target;
 
-    this.setState((prevState) => ({
+    setState((prevState) => ({
       ...prevState,
       personalInfo: {
         ...prevState.personalInfo,
         [name]: value,
       },
     }));
-    console.log(this.state.personalInfo);
-  }
+    console.log(state.personalInfo);
+  };
 
-  handleProfessionalChange(e, id) {
+  const handleProfessionalChange = (e, id) => {
     const { name, value } = e.target;
 
-    this.setState((prevState) => {
+    setState((prevState) => {
       const newProfessional = prevState.professionalInfo.map(
         (professionalItem) => {
           if (professionalItem.id === id) {
@@ -58,10 +44,10 @@ class App extends React.Component {
       );
       return { ...prevState, professionalInfo: [...newProfessional] };
     });
-  }
+  };
 
-  handleAddProfessionalSection() {
-    this.setState(
+  const handleAddProfessionalSection = () => {
+    setState(
       (prevState) => ({
         ...prevState,
         professionalInfo: [
@@ -77,13 +63,13 @@ class App extends React.Component {
         ],
       }),
       () => {
-        console.log(this.state.professionalInfo);
+        console.log(state.professionalInfo);
       }
     );
-  }
+  };
 
-  handleRemoveProfessionalSection(id) {
-    this.setState((prevState) => {
+  const handleRemoveProfessionalSection = (id) => {
+    setState((prevState) => {
       const newProfessional = prevState.professionalInfo.filter(
         (professionalItem) => {
           return professionalItem.id !== id;
@@ -91,12 +77,12 @@ class App extends React.Component {
       );
       return { ...prevState, professionalInfo: [...newProfessional] };
     });
-  }
+  };
 
-  handleEducationChange(e, id) {
+  const handleEducationChange = (e, id) => {
     const { name, value } = e.target;
 
-    this.setState((prevState) => {
+    setState((prevState) => {
       const newEducation = prevState.educationInfo.map((educationItem) => {
         if (educationItem.id === id) {
           return { ...educationItem, [name]: [value] };
@@ -105,10 +91,10 @@ class App extends React.Component {
       });
       return { ...prevState, educationInfo: [...newEducation] };
     });
-  }
+  };
 
-  handleAddEducationSection() {
-    this.setState(
+  const handleAddEducationSection = () => {
+    setState(
       (prevState) => ({
         ...prevState,
         educationInfo: [
@@ -125,60 +111,59 @@ class App extends React.Component {
         ],
       }),
       () => {
-        console.log(this.state.educationInfo);
+        console.log(state.educationInfo);
       }
     );
-  }
+  };
 
-  handleRemoveEducationSection(id) {
-    this.setState((prevState) => {
+  const handleRemoveEducationSection = (id) => {
+    setState((prevState) => {
       const newEducation = prevState.educationInfo.filter((educationItem) => {
         return educationItem.id !== id;
       });
       return { ...prevState, educationInfo: [...newEducation] };
     });
-  }
+  };
 
-  handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.setState((prevState) => ({
+    setState((prevState) => ({
       ...prevState,
-      formNotSubmitted: this.state.formNotSubmitted ? false : true,
+      formNotSubmitted: state.formNotSubmitted ? false : true,
     }));
-  }
+  };
 
-  render() {
-    return (
-      <div className='App'>
-        <header className='main-header'>
-          <h1 className='main-title'>CV Generator</h1>
-        </header>
-        <main>
-          {this.state.formNotSubmitted ? (
-            <Form
-              info={this.state}
-              onPersonalInputChange={this.handlePersonalInputChange}
-              onProfessionalChange={this.handleProfessionalChange}
-              onAddProfessionalSection={this.handleAddProfessionalSection}
-              onRemoveProfessionalSection={this.handleRemoveProfessionalSection}
-              onEducationChange={this.handleEducationChange}
-              onAddEducationSection={this.handleAddEducationSection}
-              onRemoveEducationSection={this.handleRemoveEducationSection}
-              onSubmitEvent={this.handleSubmit}
-            />
-          ) : (
-            <CurriculumVitae
-              formSubmitted={this.state.formNotSubmitted}
-              personalInfo={this.state.personalInfo}
-              professionalInfo={this.state.professionalInfo}
-              educationInfo={this.state.educationInfo}
-              onEditClick={this.handleSubmit}
-            />
-          )}
-        </main>
-      </div>
-    );
-  }
-}
+  let content = (
+    <div className='App'>
+      <header className='main-header'>
+        <h1 className='main-title'>CV Generator</h1>
+      </header>
+      <main>
+        {state.formNotSubmitted ? (
+          <Form
+            info={state}
+            onPersonalInputChange={handlePersonalInputChange}
+            onProfessionalChange={handleProfessionalChange}
+            onAddProfessionalSection={handleAddProfessionalSection}
+            onRemoveProfessionalSection={handleRemoveProfessionalSection}
+            onEducationChange={handleEducationChange}
+            onAddEducationSection={handleAddEducationSection}
+            onRemoveEducationSection={handleRemoveEducationSection}
+            onSubmitEvent={handleSubmit}
+          />
+        ) : (
+          <CurriculumVitae
+            formSubmitted={state.formNotSubmitted}
+            personalInfo={state.personalInfo}
+            professionalInfo={state.professionalInfo}
+            educationInfo={state.educationInfo}
+            onEditClick={handleSubmit}
+          />
+        )}
+      </main>
+    </div>
+  );
+  return content;
+};
 
 export default App;
