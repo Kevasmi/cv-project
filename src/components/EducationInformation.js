@@ -1,92 +1,80 @@
 import React from 'react';
 
-class EducationInformation extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleEducationChange = this.handleEducationChange.bind(this);
-    this.handleRemove = this.handleRemove.bind(this);
-  }
+const EducationInformation = (props) => {
+  const handleEducationChange = (e) => {
+    props.onChange(e, props.id);
+  };
 
-  handleEducationChange(e) {
-    this.props.onChange(e, this.props.id);
-  }
+  const handleRemove = () => {
+    props.onRemove(props.id);
+  };
 
-  handleRemove() {
-    this.props.onRemove(this.props.id);
-  }
-
-  render() {
-    return (
-      <section className='education-info'>
-        <button
-          type='button'
-          className='delete-button'
-          onClick={this.handleRemove}
-        >
-          X
-        </button>
-        <label htmlFor='education-name'>University Name </label>
+  return (
+    <section className='education-info'>
+      <button type='button' className='delete-button' onClick={handleRemove}>
+        X
+      </button>
+      <label htmlFor='education-name'>University Name </label>
+      <input
+        type='text'
+        id='education-name'
+        name='name'
+        value={props.educationItem.name}
+        onChange={handleEducationChange}
+        required
+      ></input>
+      <label htmlFor='city'>City </label>
+      <input
+        type='text'
+        id='city'
+        name='city'
+        value={props.educationItem.city}
+        onChange={handleEducationChange}
+        required
+      ></input>
+      <label htmlFor='degree'>Degree </label>
+      <input
+        type='text'
+        id='degree'
+        name='degree'
+        value={props.educationItem.degree}
+        onChange={handleEducationChange}
+        required
+      ></input>
+      <section className='dates'>
+        <label htmlFor='start-date' className='start-label'>
+          Start date{' '}
+        </label>
         <input
-          type='text'
-          id='education-name'
-          name='name'
-          value={this.props.educationItem.name}
-          onChange={this.handleEducationChange}
+          type='date'
+          id='start-date'
+          name='startDate'
+          value={props.educationItem.startDate}
+          onChange={handleEducationChange}
           required
         ></input>
-        <label htmlFor='city'>City </label>
+        <label htmlFor='end-date' className='end-label'>
+          End date{' '}
+        </label>
         <input
-          type='text'
-          id='city'
-          name='city'
-          value={this.props.educationItem.city}
-          onChange={this.handleEducationChange}
+          type='date'
+          id='end-date'
+          name='endDate'
+          value={props.educationItem.endDate}
+          onChange={handleEducationChange}
           required
         ></input>
-        <label htmlFor='degree'>Degree </label>
-        <input
-          type='text'
-          id='degree'
-          name='degree'
-          value={this.props.educationItem.degree}
-          onChange={this.handleEducationChange}
-          required
-        ></input>
-        <section className='dates'>
-          <label htmlFor='start-date' className='start-label'>
-            Start date{' '}
-          </label>
-          <input
-            type='date'
-            id='start-date'
-            name='startDate'
-            value={this.props.educationItem.startDate}
-            onChange={this.handleEducationChange}
-            required
-          ></input>
-          <label htmlFor='end-date' className='end-label'>
-            End date{' '}
-          </label>
-          <input
-            type='date'
-            id='end-date'
-            name='endDate'
-            value={this.props.educationItem.endDate}
-            onChange={this.handleEducationChange}
-            required
-          ></input>
-        </section>
-        <label htmlFor='description'>Description</label>
-        <textarea
-          id='description'
-          name='description'
-          value={this.props.educationItem.description}
-          onChange={this.handleEducationChange}
-          required
-        ></textarea>
       </section>
-    );
-  }
-}
+      <label htmlFor='description'>Description</label>
+      <textarea
+        id='description'
+        name='description'
+        value={props.educationItem.description}
+        onChange={handleEducationChange}
+        required
+      ></textarea>
+    </section>
+  );
+};
 
 export default EducationInformation;
