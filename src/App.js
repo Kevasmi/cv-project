@@ -4,7 +4,7 @@ import CurriculumVitae from './components/CurriculumVitae';
 import Form from './components/Form';
 import uniqid from 'uniqid';
 
-const App = (props) => {
+const App = () => {
   const [state, setState] = useState({
     personalInfo: {
       name: '',
@@ -27,7 +27,6 @@ const App = (props) => {
         [name]: value,
       },
     }));
-    console.log(state.personalInfo);
   };
 
   const handleProfessionalChange = (e, id) => {
@@ -47,25 +46,20 @@ const App = (props) => {
   };
 
   const handleAddProfessionalSection = () => {
-    setState(
-      (prevState) => ({
-        ...prevState,
-        professionalInfo: [
-          ...prevState.professionalInfo,
-          {
-            role: '',
-            startDate: '',
-            endDate: '',
-            name: '',
-            description: '',
-            id: uniqid(),
-          },
-        ],
-      }),
-      () => {
-        console.log(state.professionalInfo);
-      }
-    );
+    setState((prevState) => ({
+      ...prevState,
+      professionalInfo: [
+        ...prevState.professionalInfo,
+        {
+          role: '',
+          startDate: '',
+          endDate: '',
+          name: '',
+          description: '',
+          id: uniqid(),
+        },
+      ],
+    }));
   };
 
   const handleRemoveProfessionalSection = (id) => {
@@ -94,26 +88,21 @@ const App = (props) => {
   };
 
   const handleAddEducationSection = () => {
-    setState(
-      (prevState) => ({
-        ...prevState,
-        educationInfo: [
-          ...prevState.educationInfo,
-          {
-            name: '',
-            city: '',
-            degree: '',
-            startDate: '',
-            endDate: '',
-            description: '',
-            id: uniqid(),
-          },
-        ],
-      }),
-      () => {
-        console.log(state.educationInfo);
-      }
-    );
+    setState((prevState) => ({
+      ...prevState,
+      educationInfo: [
+        ...prevState.educationInfo,
+        {
+          name: '',
+          city: '',
+          degree: '',
+          startDate: '',
+          endDate: '',
+          description: '',
+          id: uniqid(),
+        },
+      ],
+    }));
   };
 
   const handleRemoveEducationSection = (id) => {
